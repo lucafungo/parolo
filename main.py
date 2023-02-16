@@ -9,7 +9,7 @@ colorama.init(autoreset=True)
 score = 0
 attempts = 0
 
-word_of_the_day = 'bipog'
+word_of_the_day = 'abcde'
 
 
 def slicing(word):
@@ -37,6 +37,7 @@ while attempts < 5:
     slicing(word_by_user)
     check_attempt(word_of_the_day, word_by_user)
     attempts = attempts + 1
+    print(score)
     # print(slicing(word_by_user))
     # print(slicing(word_of_the_day))
     # print(attempts)
