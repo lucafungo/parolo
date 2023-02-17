@@ -12,6 +12,10 @@ def slicing(word):
     return [letter for letter in word]
 
 
+f = open("intro.txt", "r")
+print(f.read())
+
+
 def check_attempt(word_of_the_day, word_by_user):
     global score
     score = 0

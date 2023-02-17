@@ -1,0 +1,11 @@
+.
+.
+Welcome in PAROLO! the cheap and sgangherata version of the popular wordle game.
+To play you need to type a five letter word, 
+the program will compare your word with the 'word of the day'
+and display it as follow:
+[GREEN] if the letter is in the right position
+[YELLOW] if the letter is in the 'word of the day' but in a different position
+[WHITE] if the letter is not in the 'word of the day
+.
+.
