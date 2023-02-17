@@ -7,5 +7,6 @@ and display it as follow:
 [GREEN] if the letter is in the right position
 [YELLOW] if the letter is in the 'word of the day' but in a different position
 [WHITE] if the letter is not in the 'word of the day
+
 .
 .
