@@ -45,8 +45,16 @@ while attempts < 5:
         if score == 5:
             print('\nYOU WON!\n')
             break
+    elif len(word_by_user) == 1:
+        if word_by_user.upper() == 'H':
+            f = open("intro.txt", "r")
+            print(f.read())
+        elif word_by_user.upper() == 'R':
+            break
+
     else:
         print('Please, type a five letters word')
 
 if attempts == 5 and score != 5:
-    print('\n\nYOU LOSE!\n\nBetter luck next time!\n')
+    print(
+        f'\n\nYOU LOSE! :( \n\nThe word to guess was {word_of_the_day.upper()}. Better luck next time!\n')
