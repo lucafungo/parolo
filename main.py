@@ -1,3 +1,5 @@
+import json
+from random import randrange
 import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
@@ -5,7 +7,13 @@ colorama.init(autoreset=True)
 
 attempts = 0
 
-word_of_the_day = 'abcde'
+
+f = open('cinquecento_words.json')
+data = json.load(f)
+word_of_the_day = data[randrange(1125)]
+
+# Closing file
+f.close()
 
 
 def slicing(word):
@@ -37,6 +45,7 @@ def check_attempt(word_of_the_day, word_by_user):
 slicing(word_of_the_day)
 
 while attempts < 5:
+    # print(word_of_the_day)
     word_by_user = input('\nType your guess ')
     if len(word_by_user) == 5:
         slicing(word_by_user)
