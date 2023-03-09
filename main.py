@@ -28,13 +28,20 @@ def check_attempt(word_of_the_day, word_by_user):
     global score
     score = 0
     count = 0
+
+    yellow_letters = {}
+
     for user_letter in word_by_user:
         if user_letter == word_of_the_day[count]:
             print(Fore.BLACK+Back.GREEN + user_letter, end='')
             score = score + 1
             count = count + 1
         elif user_letter in word_of_the_day:
-            print(Fore.BLACK+Back.YELLOW + user_letter, end='')
+            if user_letter not in yellow_letters:
+                print(Fore.BLACK+Back.YELLOW + user_letter, end='')
+                yellow_letters[user_letter] = 1
+            else:
+                print(Fore.BLACK+Back.WHITE + user_letter, end='')
             count = count + 1
         else:
             print(Fore.BLACK+Back.WHITE + user_letter, end='')
