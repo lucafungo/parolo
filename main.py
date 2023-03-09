@@ -8,7 +8,7 @@ colorama.init(autoreset=True)
 attempts = 0
 
 
-f = open('cinquecento_words.json')
+f = open('stored_words.json')
 data = json.load(f)
 word_of_the_day = data[randrange(1125)]
 
