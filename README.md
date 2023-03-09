@@ -1,9 +1,9 @@
 # parolo
  
  
-version of WORDLE, not forked from the original project but done from scratch
+version of WORDLE, not forked from the original project (exept for the list of stored words) but done from scratch
 
-need few adjustment 
+soon to arrive the front-end for a web app and the italian (and other languages) version 
 
 
-json file generate from chatGPT and formatted on https://jsonformatter.curiousconcept.com/#
+
