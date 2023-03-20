@@ -2,11 +2,11 @@ import json
 from random import randrange
 import colorama
 from colorama import Fore, Back, Style
+
+
 colorama.init(autoreset=True)
-
-
 attempts = 0
-
+attempted_letters = []
 
 f = open('stored_words.json')
 data = json.load(f)
@@ -24,13 +24,13 @@ f = open("intro.txt", "r")
 print(f.read())
 
 
+
+
 def check_attempt(word_of_the_day, word_by_user):
     global score
     score = 0
     count = 0
-
     yellow_letters = {}
-
     for user_letter in word_by_user:
         if user_letter == word_of_the_day[count]:
             print(Fore.BLACK+Back.GREEN + user_letter, end='')
@@ -42,9 +42,11 @@ def check_attempt(word_of_the_day, word_by_user):
                 yellow_letters[user_letter] = 1
             else:
                 print(Fore.BLACK+Back.WHITE + user_letter, end='')
+                attempted_letters.append(user_letter)
             count = count + 1
         else:
             print(Fore.BLACK+Back.WHITE + user_letter, end='')
+            attempted_letters.append(user_letter)
             count = count + 1
     return score
 
@@ -52,9 +54,13 @@ def check_attempt(word_of_the_day, word_by_user):
 slicing(word_of_the_day)
 
 while attempts < 5:
-    # print(word_of_the_day)
-    word_by_user = input('\nType your guess ')
+    if attempts > 0:
+        print(f"\n{attempted_letters}")
+    word_by_user = input('\nType your guess: ')
     if len(word_by_user) == 5:
+        if word_by_user not in data:
+            print("Are you sure this word exist? Please type a new one.")
+            continue
         slicing(word_by_user)
         check_attempt(word_of_the_day, word_by_user)
         attempts = attempts + 1
@@ -69,7 +75,7 @@ while attempts < 5:
             break
 
     else:
-        print('Please, type a five letters word')
+        print('Please, type a five letters word.')
 
 if attempts == 5 and score != 5:
     print(
