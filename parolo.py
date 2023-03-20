@@ -1,7 +1,7 @@
 import json
 from random import randrange
 import colorama
-from colorama import Fore, Back, Style
+from colorama import Fore, Back
 
 
 colorama.init(autoreset=True)
