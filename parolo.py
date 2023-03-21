@@ -58,7 +58,7 @@ def check_attempt(word_of_the_day, word_by_user):
 # Convert the word of the day into a list of letters
 slicing(word_of_the_day)
 
-# Allow the user to attempt to guess the word of the day 5 times
+# Allow the user to attempt to guess the word of the day 6 times
 while attempts < 6:
     if attempts > 0:
         # Print any attempted letters that were not in the word of the day
