@@ -59,7 +59,7 @@ def check_attempt(word_of_the_day, word_by_user):
 slicing(word_of_the_day)
 
 # Allow the user to attempt to guess the word of the day 5 times
-while attempts < 5:
+while attempts < 6:
     if attempts > 0:
         # Print any attempted letters that were not in the word of the day
         print(f"\n{attempted_letters}")
@@ -89,7 +89,7 @@ while attempts < 5:
         # If the user atttempt is a word of more or less letters then five, print this an error
         print('Please, type a five letters word.')
 # If the user reach five attempts correctly guess the 'word_of_the_day', end the game and print this 
-if attempts == 5 and score != 5:
+if attempts == 6 and score != 5:
     print(
         f'\n\nYOU LOSE! :( \n\nThe word to guess was {word_of_the_day.upper()}. Better luck next time!\n')
 
