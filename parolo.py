@@ -19,14 +19,19 @@ word_of_the_day = data[randrange(1125)]
 f.close()
 
 # Define a function to convert a word into a list of letters
+
+
 def slicing(word):
     return [letter for letter in word]
+
 
 # Open and print the contents of the intro file
 f = open("intro.txt", "r")
 print(f.read())
 
 # Define a function to check the user's attempt against the word of the day
+
+
 def check_attempt(word_of_the_day, word_by_user):
     global score
     score = 0
@@ -46,14 +51,15 @@ def check_attempt(word_of_the_day, word_by_user):
             else:
                 # Print the letter that has already been attempted in white
                 print(Fore.BLACK+Back.WHITE + user_letter, end='')
-                attempted_letters.append(user_letter)
             count = count + 1
         else:
             # Print the incorrectly guessed letter in white
             print(Fore.BLACK+Back.WHITE + user_letter, end='')
-            attempted_letters.append(user_letter)
+            if user_letter not in attempted_letters:
+                attempted_letters.append(user_letter)
             count = count + 1
     return score
+
 
 # Convert the word of the day into a list of letters
 slicing(word_of_the_day)
@@ -88,8 +94,7 @@ while attempts < 6:
     else:
         # If the user atttempt is a word of more or less letters then five, print this an error
         print('Please, type a five letters word.')
-# If the user reach five attempts correctly guess the 'word_of_the_day', end the game and print this 
+# If the user reach five attempts correctly guess the 'word_of_the_day', end the game and print this
 if attempts == 6 and score != 5:
     print(
         f'\n\nYOU LOSE! :( \n\nThe word to guess was {word_of_the_day.upper()}. Better luck next time!\n')
-
