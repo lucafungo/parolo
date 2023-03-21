@@ -9,7 +9,7 @@ and display it as follow:
 [WHITE] if the letter is not in the 'word of the day
 
 (Type 'H' to reprint this intro, 'R' to close the game)
-You got 5 attempts!
+You got 6 attempts!
 
 .
 .
