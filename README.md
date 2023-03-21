@@ -20,7 +20,7 @@ docker build -t parolo .
 To run the game in a Docker container, use the following command:
 
 ```
-docker run -it word_guessing_game
+docker run -it parolo
 ```
 ## Contributing
 
