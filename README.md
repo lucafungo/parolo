@@ -31,4 +31,4 @@ Please make sure to update tests as appropriate.
 
 ## Contact
 
-If you have any questions or comments, please feel free to contact the author at luca.alfieri@xandertalent.com.
+If you have any questions or comments, please feel free to contact the author at alfieriluca91@gmail.com.
